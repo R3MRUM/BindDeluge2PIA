@@ -1,4 +1,6 @@
 # DelugePIANetUpdate
+# Author: @R3MRUM
+
 A powershell script that updates the Deluge listen_interface and listen_ports to reflect Private Internet Access' TAP IP and ports that are forwarded.
 
 I wrote this script because i needed to bind deluge to PIA while everything else went out on the dirty net. The problem is that every now and then, PIA would reset the connection which would result in a new TAP IP and new ports being forwarded.
