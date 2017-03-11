@@ -1,5 +1,5 @@
 # DelugePIANetUpdate
-# Author: @R3MRUM
+### Author: @R3MRUM
 
 A powershell script that updates the Deluge listen_interface and listen_ports to reflect Private Internet Access' TAP IP and ports that are forwarded.
 
