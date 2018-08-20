@@ -1,6 +1,6 @@
 function Get-PIA-Port{
     $pia_log="C:\Program Files\pia_manager\log\pia_manager.log"
-    $port_line=Select-String $pia_log -pattern "forwarded_port: "|select -last 1
+    $port_line=Select-String $pia_log -pattern "Forwarded port: "|select -last 1
     $port=$port_line.Line.Split(": ")[-1].Trim()
     return $port.replace("`0", "")
 }
