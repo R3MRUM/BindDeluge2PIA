@@ -1,12 +1,12 @@
 function Get-PIA-Port{
-    $pia_log="C:\Program Files\pia_manager\log\pia_manager.log"
-    $port_line=Select-String $pia_log -pattern "Forwarded port: "|select -last 1
+    $pia_log="C:\Program Files\Private Internet Access\data\daemon.log"
+    $port_line=Select-String $pia_log -pattern "Forwarded port updated to "|select -last 1
     $port=$port_line.Line.Split(": ")[-1].Trim()
     return $port.replace("`0", "")
 }
 
 function Get-PIA-IP{
-    $TAPInterface=Get-NetAdapter -InterfaceDescription "TAP-Windows Adapter*"| Select -ExpandProperty ifIndex
+    $TAPInterface=Get-NetAdapter -InterfaceDescription "Private Internet Access Network Adapter"| Select -ExpandProperty ifIndex
     $TAPIP=Get-NetIPAddress -InterfaceIndex $TAPInterface |Select -ExpandProperty IPAddress|Where {$_ -notlike "*:*"}
     return $TAPIP
 
